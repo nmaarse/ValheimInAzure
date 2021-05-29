@@ -6,6 +6,7 @@ $SUBSCRIPTION = "<NameOfYourAzureSubscription>"
 $RESOURCE_GROUP = "<yourresourcegroup>"
 $WORLD_NAME="<NameOfYourValheimWorld>"
 $VALHEIM_SERVER_NAME = "<ValheimServerName>"
+$PASSWORD = "<YourServerPassword>"
 
 # change this location to your nearest azure location.
 $RESOURCE_GROUP_LOCATION = "westeurope"
@@ -63,7 +64,7 @@ az container create `
     --azure-file-volume-mount-path /config `
     --cpu 4 `
     --memory 8 `
-    --environment-variables SERVER_NAME=ValheimNiek WORLD_NAME=$WORLD_NAME SERVER_PASS=hufters SERVER_PUBLIC=true
+    --environment-variables SERVER_NAME=ValheimNiek WORLD_NAME=$WORLD_NAME SERVER_PASS=$PASSWORD SERVER_PUBLIC=true
 
 Write-Output "CREATED Azure Container Instance $CONTAINER_NAME "
 Write-Output "To deploy your own world:"
