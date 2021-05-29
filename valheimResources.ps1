@@ -67,7 +67,7 @@ az container create `
 
 Write-Output "CREATED Azure Container Instance $CONTAINER_NAME "
 Write-Output "To deploy your own world:"
-Write-Output "1) try to have your valheim game connect to the server $CONTAINER_NAME.$RESOURCE_GROUP_LOCATION.azurecontainer.io"
+Write-Output "1) try to have your valheim game connect to the server $VALHEIM_SERVER_NAME.$RESOURCE_GROUP_LOCATION.azurecontainer.io"
 Write-Output "2) stop the container instance"
 Write-Output "3) copy the .fwl and .db file  and .db.old files of your world form C:\Users\<username>\AppData\LocalLow\IronGate\Valheim\worlds to the fileshare."
 Write-Output "4) Make sure you deployed the ran this script with the correct `$World_NAME` variable which is identical as the file you are copying."
