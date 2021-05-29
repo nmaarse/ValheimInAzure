@@ -1,13 +1,17 @@
 # install powershell 7 https://github.com/PowerShell/PowerShell/releases/tag/v7.1.3
 # install Azure powershell module with 'Install-Module -Name Az'
 
-$SUBSCRIPTION = "Visual Studio Enterprise Subscription"
-$RESOURCE_GROUP = "valheimniekmaarse"
+# Updating the following 4 lines is required to configure the script to your situation.
+$SUBSCRIPTION = "<NameOfYourAzureSubscription>"
+$RESOURCE_GROUP = "<yourresourcegroup>"
+$WORLD_NAME="<NameOfYourValheimWorld>"
+$VALHEIM_SERVER_NAME = "<ValheimServerName>"
+
+# change this location to your nearest azure location.
 $RESOURCE_GROUP_LOCATION = "westeurope"
+
 $STORAGE_ACCOUNT_NAME = "sto" + $RESOURCE_GROUP
 $CONTAINER_NAME = "con" + $RESOURCE_GROUP
-$WORLD_NAME="ArnhemWorld"
-$VALHEIM_SERVER_NAME = "valheimniekserver"
 
 az login
 az account set --subscription $SUBSCRIPTION
@@ -18,9 +22,6 @@ If (!(Get-AzResourceGroup -ResourceGroupName $RESOURCE_GROUP)) {
 }
 
 # From example https://docs.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files
-
-
-# Create the storage account with the parameters
 Write-Output "CREATING storage account $STORAGE_ACCOUNT_NAME"
 az storage account create `
     --resource-group $RESOURCE_GROUP `
