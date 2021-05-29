@@ -19,7 +19,7 @@ change the following variables in this script:
 run the valheimResources.ps1 file from your powershell commandline with admin rights.
 
 # Play
-Start Valheim and start playing your server name is shown in the console. A new world was created during startup of the server.
+Start Valheim and start playing. Your server name is shown in the console. A new world was created during startup of the server.
 
 # Load an already created world
 The console output also provides instructions how to load your own already created world. 
