@@ -1,7 +1,7 @@
 # install powershell 7 https://github.com/PowerShell/PowerShell/releases/tag/v7.1.3
 # install Azure powershell module with 'Install-Module -Name Az'
 
-# Updating the following 4 lines is required to configure the script to your situation.
+# Updating the following set of lines is required to configure the script to your situation.
 $SUBSCRIPTION = "<NameOfYourAzureSubscription>"
 $RESOURCE_GROUP = "<yourresourcegroup>"
 $WORLD_NAME="<NameOfYourValheimWorld>"
@@ -64,7 +64,7 @@ az container create `
     --azure-file-volume-mount-path /config `
     --cpu 4 `
     --memory 8 `
-    --environment-variables SERVER_NAME=ValheimNiek WORLD_NAME=$WORLD_NAME SERVER_PASS=$PASSWORD SERVER_PUBLIC=true
+    --environment-variables SERVER_NAME=$VALHEIM_SERVER_NAME WORLD_NAME=$WORLD_NAME SERVER_PASS=$PASSWORD SERVER_PUBLIC=true
 
 Write-Output "CREATED Azure Container Instance $CONTAINER_NAME "
 Write-Output "To deploy your own world:"
