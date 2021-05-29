@@ -1,5 +1,6 @@
 # ValheimInAzure
-A small powershell script that provisions Azure to run your own Valheim server.
+A small powershell script that provisions Azure to run your own Valheim server. Once the script is finished you can play.
+This script is using the docker image from https://hub.docker.com/r/lloesche/valheim-server. All credits for the valheim server go to them. I just wanted to have a simple script that provisions Azure with this docker image in a completely automated way.  
 
 # Requirements
 * An Azure subscription
