@@ -1,14 +1,16 @@
 # install powershell 7 https://github.com/PowerShell/PowerShell/releases/tag/v7.1.3
 # install Azure powershell module with 'Install-Module -Name Az'
 
-az login
-az account set --subscription "Visual Studio Enterprise Subscription"
-
-$RESOURCE_GROUP = "<yourResourceGroup>"
+$SUBSCRIPTION = "Visual Studio Enterprise Subscription"
+$RESOURCE_GROUP = "valheimniekmaarse"
 $RESOURCE_GROUP_LOCATION = "westeurope"
 $STORAGE_ACCOUNT_NAME = "sto" + $RESOURCE_GROUP
 $CONTAINER_NAME = "con" + $RESOURCE_GROUP
-$WORLD_NAME="<YourWorldNameToHost>"
+$WORLD_NAME="ArnhemWorld"
+$VALHEIM_SERVER_NAME = "valheimniekserver"
+
+az login
+az account set --subscription $SUBSCRIPTION
 
 If (!(Get-AzResourceGroup -ResourceGroupName $RESOURCE_GROUP)) {
     New-AzResourceGroup -Name $RESOURCE_GROUP -Location $RESOURCE_GROUP_LOCATION
@@ -51,7 +53,7 @@ az container create `
     --resource-group $RESOURCE_GROUP `
     --name $CONTAINER_NAME `
     --image lloesche/valheim-server `
-    --dns-name-label valheimniekserver `
+    --dns-name-label $VALHEIM_SERVER_NAME `
     --ports 80 2456 2457 `
     --protocol UDP `
     --azure-file-volume-account-name $STORAGE_ACCOUNT_NAME `
