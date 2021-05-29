@@ -4,11 +4,11 @@
 az login
 az account set --subscription "Visual Studio Enterprise Subscription"
 
-$RESOURCE_GROUP = "valheimniekmaarse"
+$RESOURCE_GROUP = "<yourResourceGroup>"
 $RESOURCE_GROUP_LOCATION = "westeurope"
 $STORAGE_ACCOUNT_NAME = "sto" + $RESOURCE_GROUP
 $CONTAINER_NAME = "con" + $RESOURCE_GROUP
-$WORLD_NAME="ArnhemWorld"
+$WORLD_NAME="<YourWorldNameToHost>"
 
 If (!(Get-AzResourceGroup -ResourceGroupName $RESOURCE_GROUP)) {
     New-AzResourceGroup -Name $RESOURCE_GROUP -Location $RESOURCE_GROUP_LOCATION
